@@ -74,21 +74,37 @@ body {
 }
 
 .description::-webkit-scrollbar,
-.result::-webkit-scrollbar {
+.result::-webkit-scrollbar,
+.wrapper::-webkit-scrollbar {
     width: 10px;
-    background-color: var(--bgDark);
+    background-color: transparent;
 }
 
 .description::-webkit-scrollbar-thumb,
-.result::-webkit-scrollbar-thumb {
+.result::-webkit-scrollbar-thumb,
+.wrapper::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     background-color: var(--white);
 }
 
 .description::-webkit-scrollbar-track,
-.result::-webkit-scrollbar-track {
+.result::-webkit-scrollbar-track,
+.wrapper::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: var(--bgDark);
+}
+
+@media (max-width: 850px) {
+    .wrapper {
+        height: 95%;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .task {
+        width: 100%;
+        min-height: 70vh;
+    }
 }
